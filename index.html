@@ -2,8 +2,8 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uddevalla Omnibus | Dan Ljung</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
         margin: 0;
@@ -17,94 +17,67 @@
         overflow: hidden;
     }
 
+    /* پس‌زمینه محو و تیره‌تر */
     body::before {
         content: "";
         position: absolute;
         inset: 0;
         background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg')
-                    no-repeat center center;
-        background-size: cover;
+                    no-repeat center center/cover;
         filter: blur(8px) brightness(0.4);
         z-index: -1;
-        transition: background-position 0.3s ease, background-size 0.3s ease;
+        transition: background-position 0.3s ease;
     }
 
     .glass-card {
         background: rgba(255, 255, 255, 0.15);
         border-radius: 20px;
-        padding: 20px 30px;
-        width: 90%;
-        max-width: 460px;
+        padding: 25px 40px;
+        width: 460px;
         backdrop-filter: blur(12px);
         box-shadow: 0 8px 32px rgba(0,0,0,0.5);
         text-align: center;
         z-index: 1;
     }
 
-    .glass-card h1 {
-        margin-top: 0;
-        font-size: clamp(24px, 5vw, 38px);
-        font-weight: bold;
-        color: #f5f5f5;
-    }
+    .glass-card h1 { margin-top: 0; font-size: 38px; font-weight: bold; color: #f5f5f5; }
+    .glass-card h2 { font-size: 21px; font-weight: normal; margin-top: -8px; margin-bottom: 25px; color: #e0e0e0; }
+    .name { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
+    .job { font-size: 22px; margin-bottom: 24px; color: #cfd8dc; }
+    .contact { font-size: 18px; margin: 6px 0; }
+    a { color: #bbdefb; text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
 
-    .glass-card h2 {
-        font-size: clamp(14px, 3.5vw, 21px);
-        font-weight: normal;
-        margin-top: -8px;
-        margin-bottom: 20px;
-        color: #e0e0e0;
-    }
-
-    .name {
-        font-size: clamp(18px, 4.5vw, 28px);
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    .job {
-        font-size: clamp(14px, 4vw, 22px);
-        margin-bottom: 20px;
-        color: #cfd8dc;
-    }
-
-    .contact {
-        font-size: clamp(12px, 3.5vw, 18px);
-        margin: 6px 0;
-    }
-
-    a {
-        color: #bbdefb;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* موبایل عمودی - نمایش کامل اتوبوس */
+    /* موبایل عمودی */
     @media (max-width: 600px) and (orientation: portrait) {
         body::before {
-            background-size: contain;
-            background-position: center center;
-            background-repeat: no-repeat;
+            background-position: 40% center; /* جابجایی برای دیدن بیشتر بدنه */
         }
         .glass-card {
-            padding: 25px 20px;
+            width: 90%;
+            padding: 20px;
         }
+        .glass-card h1 { font-size: 28px; }
+        .glass-card h2 { font-size: 16px; margin-bottom: 15px; }
+        .name { font-size: 22px; }
+        .job { font-size: 16px; margin-bottom: 15px; }
+        .contact { font-size: 14px; }
     }
 
-    /* موبایل افقی - نمایش کامل اتوبوس */
-    @media (max-height: 500px) and (orientation: landscape) {
+    /* موبایل افقی */
+    @media (orientation: landscape) and (max-height: 500px) {
         body::before {
-            background-size: contain;
             background-position: center center;
         }
         .glass-card {
             max-width: 70%;
             padding: 15px 25px;
         }
+        .glass-card h1 { font-size: 26px; }
+        .glass-card h2 { font-size: 14px; }
+        .name { font-size: 20px; }
+        .job { font-size: 14px; }
+        .contact { font-size: 13px; }
     }
 </style>
 </head>
