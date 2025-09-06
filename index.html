@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Uddevalla Omnibus | Dan Ljung</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* پس‌زمینه محو و تیره‌تر */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg') 
+                    no-repeat center center/cover;
+        filter: blur(8px) brightness(0.4);
+        z-index: -1;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 25px 40px; /* کاهش ارتفاع با کم کردن پدینگ عمودی */
+        width: 460px; /* کوچک‌شده */
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        text-align: center;
+        z-index: 1;
+    }
+
+    .glass-card h1 {
+        margin-top: 0;
+        font-size: 38px;
+        font-weight: bold;
+        color: #f5f5f5;
+    }
+
+    .glass-card h2 {
+        font-size: 21px;
+        font-weight: normal;
+        margin-top: -8px;
+        margin-bottom: 25px;
+        color: #e0e0e0;
+    }
+
+    .name {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .job {
+        font-size: 22px;
+        margin-bottom: 24px;
+        color: #cfd8dc;
+    }
+
+    .contact {
+        font-size: 18px;
+        margin: 6px 0;
+    }
+
+    a {
+        color: #bbdefb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <div class="glass-card">
+        <h1>Uddevalla Omnibus</h1>
+        <h2>Södra Järnvägsgatan 2, 451 50 Uddevalla</h2>
+
+        <div class="name">Dan Ljung</div>
+        <div class="job">Gruppchef</div>
+
+        <div class="contact">
+            Mail: <a href="mailto:dan.ljung@uddevalla-omnibus.se">dan.ljung@uddevalla-omnibus.se</a>
+        </div>
+        <div class="contact">
+            Tel: <a href="tel:+46105572161">010-557 21 61</a>
+        </div>
+    </div>
+</body>
+</html>
