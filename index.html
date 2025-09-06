@@ -26,6 +26,7 @@
         background-size: cover;
         filter: blur(8px) brightness(0.4);
         z-index: -1;
+        transition: background-position 0.3s ease;
     }
 
     .glass-card {
@@ -42,7 +43,7 @@
 
     .glass-card h1 {
         margin-top: 0;
-        font-size: clamp(24px, 5vw, 38px); /* واکنش‌گرا */
+        font-size: clamp(24px, 5vw, 38px);
         font-weight: bold;
         color: #f5f5f5;
     }
@@ -82,8 +83,21 @@
         text-decoration: underline;
     }
 
-    /* وقتی گوشی افقی میشه */
+    /* حالت موبایل عمودی */
+    @media (max-width: 600px) and (orientation: portrait) {
+        body::before {
+            background-position: 40% center; /* جابجایی به سمت چپ برای دیدن بیشتر بدنه */
+        }
+        .glass-card {
+            padding: 25px 20px;
+        }
+    }
+
+    /* حالت موبایل افقی */
     @media (orientation: landscape) and (max-height: 500px) {
+        body::before {
+            background-position: center center;
+        }
         .glass-card {
             max-width: 70%;
             padding: 15px 25px;
