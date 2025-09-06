@@ -17,22 +17,22 @@
         overflow: hidden;
     }
 
-    /* پس‌زمینه محو و تیره‌تر */
+    /* پس‌زمینه محو */
     body::before {
         content: "";
         position: absolute;
         inset: 0;
         background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg')
-                    no-repeat center center/cover;
+            no-repeat center center/cover;
         filter: blur(8px) brightness(0.4);
         z-index: -1;
-        transition: background-position 0.3s ease;
+        transition: all 0.3s ease;
     }
 
     .glass-card {
         background: rgba(255, 255, 255, 0.15);
         border-radius: 20px;
-        padding: 25px 40px;
+        padding: 20px 30px;
         width: 460px;
         backdrop-filter: blur(12px);
         box-shadow: 0 8px 32px rgba(0,0,0,0.5);
@@ -48,36 +48,23 @@
     a { color: #bbdefb; text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
 
-    /* موبایل عمودی */
-    @media (max-width: 600px) and (orientation: portrait) {
+    /* موبایل عمودی و افقی */
+    @media (max-width: 600px) {
         body::before {
-            background-position: 40% center; /* جابجایی برای دیدن بیشتر بدنه */
+            background-size: contain;  /* نمایش کل اتوبوس */
+            background-position: center;
+            filter: blur(8px) brightness(0.6); /* کمی روشن‌تر */
+            background-color: black; /* پر کردن فضاهای خالی با مشکی */
         }
         .glass-card {
-            width: 90%;
-            padding: 20px;
-        }
-        .glass-card h1 { font-size: 28px; }
-        .glass-card h2 { font-size: 16px; margin-bottom: 15px; }
-        .name { font-size: 22px; }
-        .job { font-size: 16px; margin-bottom: 15px; }
-        .contact { font-size: 14px; }
-    }
-
-    /* موبایل افقی */
-    @media (orientation: landscape) and (max-height: 500px) {
-        body::before {
-            background-position: center center;
-        }
-        .glass-card {
-            max-width: 70%;
-            padding: 15px 25px;
+            width: 85%; /* کوچکتر از دسکتاپ */
+            padding: 15px 20px;
         }
         .glass-card h1 { font-size: 26px; }
-        .glass-card h2 { font-size: 14px; }
+        .glass-card h2 { font-size: 16px; margin-bottom: 15px; }
         .name { font-size: 20px; }
-        .job { font-size: 14px; }
-        .contact { font-size: 13px; }
+        .job { font-size: 15px; margin-bottom: 15px; }
+        .contact { font-size: 14px; }
     }
 </style>
 </head>
