@@ -17,29 +17,14 @@
         overflow: hidden;
     }
 
-    /* پس‌زمینه دسکتاپ */
+    /* پس‌زمینه - تصویر بریده‌شده برای موبایل */
     body::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg')
-            no-repeat center center / cover;
+        background: url('cropped-bus-mobile.jpg') no-repeat center center / cover;
         filter: blur(8px) brightness(0.4);
-        z-index: -2;
-        transition: all 0.3s ease;
-    }
-
-    /* لایه گرادیان برای موبایل */
-    body::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0)),
-                    linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
-        pointer-events: none;
         z-index: -1;
-        opacity: 0; /* فقط موبایل فعالش می‌کنیم */
-        transition: opacity 0.3s ease;
     }
 
     .glass-card {
@@ -68,13 +53,8 @@
             align-items: center;
         }
         body::before {
-            background-size: contain; /* نمایش کل اتوبوس */
-            background-position: center;
-            background-color: transparent;
-            filter: blur(8px) brightness(0.7);
-        }
-        body::after {
-            opacity: 1; /* گرادیان فعال شود */
+            background: url('cropped-bus-mobile.jpg') no-repeat center center / cover;
+            filter: blur(8px) brightness(0.7); /* روشن‌تر روی موبایل */
         }
         .glass-card {
             width: 75%;
