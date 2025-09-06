@@ -26,7 +26,7 @@
         background-size: cover;
         filter: blur(8px) brightness(0.4);
         z-index: -1;
-        transition: background-position 0.3s ease;
+        transition: background-position 0.3s ease, background-size 0.3s ease;
     }
 
     .glass-card {
@@ -83,19 +83,22 @@
         text-decoration: underline;
     }
 
-    /* حالت موبایل عمودی */
+    /* موبایل عمودی - نمایش کامل اتوبوس */
     @media (max-width: 600px) and (orientation: portrait) {
         body::before {
-            background-position: 40% center; /* جابجایی به سمت چپ برای دیدن بیشتر بدنه */
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
         .glass-card {
             padding: 25px 20px;
         }
     }
 
-    /* حالت موبایل افقی */
-    @media (orientation: landscape) and (max-height: 500px) {
+    /* موبایل افقی - نمایش کامل اتوبوس */
+    @media (max-height: 500px) and (orientation: landscape) {
         body::before {
+            background-size: contain;
             background-position: center center;
         }
         .glass-card {
