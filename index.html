@@ -17,20 +17,20 @@
         overflow: hidden;
     }
 
-    /* پس‌زمینه محو */
+    /* پس‌زمینه */
     body::before {
         content: "";
         position: absolute;
         inset: 0;
         background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg')
-            no-repeat center center/cover;
+            no-repeat center center / cover;
         filter: blur(8px) brightness(0.4);
         z-index: -1;
         transition: all 0.3s ease;
     }
 
     .glass-card {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.18);
         border-radius: 20px;
         padding: 20px 30px;
         width: 460px;
@@ -48,17 +48,22 @@
     a { color: #bbdefb; text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
 
-    /* موبایل عمودی و افقی */
-    @media (max-width: 600px) {
+    /* موبایل عمودی */
+    @media (max-width: 600px) and (orientation: portrait) {
+        body {
+            justify-content: center;
+            align-items: center;
+        }
         body::before {
             background-size: contain;  /* نمایش کل اتوبوس */
             background-position: center;
-            filter: blur(8px) brightness(0.6); /* کمی روشن‌تر */
-            background-color: black; /* پر کردن فضاهای خالی با مشکی */
+            background-color: black;
+            filter: blur(8px) brightness(0.7); /* روشن‌تر */
         }
         .glass-card {
-            width: 85%; /* کوچکتر از دسکتاپ */
-            padding: 15px 20px;
+            width: 75%; /* کوچک‌تر */
+            padding: 15px 18px;
+            background: rgba(255, 255, 255, 0.22); /* کمی روشن‌تر */
         }
         .glass-card h1 { font-size: 26px; }
         .glass-card h2 { font-size: 16px; margin-bottom: 15px; }
