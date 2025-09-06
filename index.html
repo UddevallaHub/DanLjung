@@ -15,16 +15,15 @@ align-items: center;
 color: white;
 position: relative;
 overflow: hidden;
+background-color: #222; /* fallback */
 }
 
-/* پس‌زمینه محو */
 body::before {
 content: "";
 position: absolute;
 inset: 0;
-background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg')
-no-repeat center center/cover;
-filter: blur(8px) brightness(0.4);
+background: url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg') no-repeat center center / cover;
+filter: blur(8px) brightness(0.7);
 z-index: -1;
 transition: all 0.3s ease;
 }
@@ -33,7 +32,7 @@ transition: all 0.3s ease;
 background: rgba(255, 255, 255, 0.15);
 border-radius: 20px;
 padding: 20px 30px;
-width: 380px; /* <-- اینجا کوچک شد (از 460px به 380px) */
+width: 380px;
 backdrop-filter: blur(12px);
 box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 text-align: center;
@@ -50,15 +49,21 @@ a:hover { text-decoration: underline; }
 
 /* موبایل عمودی و افقی */
 @media (max-width: 600px) {
+/* استفاده از cover تا نوارها حذف شوند، روشن‌تر کردن تصویر و اضافه کردن گرادیان خیلی شفاف برای نرم شدن لبه‌ها */
 body::before {
-background-size: contain;  /* نمایش کل اتوبوس */
-background-position: center;
-filter: blur(8px) brightness(0.6); /* کمی روشن‌تر */
-background-color: black; /* پر کردن فضاهای خالی با مشکی */
+background-size: cover; /* پر کردن کامل صفحه */
+background-position: center center;
+filter: blur(6px) brightness(0.75); /* روشن‌تر تا تصویر دیده شود */
+/* اضافه کردن گرادیان شفاف برای جلوگیری از لبه‌های ناگهانی، اما نه رنگ مشکی */
+background-image:
+linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.00)),
+url('https://thumbs.dreamstime.com/b/luxury-coach-bus-driving-highway-sunset-modern-travels-down-beautiful-background-symbolizing-travel-322919814.jpg');
+background-blend-mode: normal;
 }
 .glass-card {
-width: 72%; /* <-- برای موبایل هم کوچکتر شد (پیش از این 85%) */
+width: 72%;
 padding: 15px 20px;
+background: rgba(255,255,255,0.18);
 }
 .glass-card h1 { font-size: 26px; }
 .glass-card h2 { font-size: 16px; margin-bottom: 15px; }
